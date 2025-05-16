@@ -9,7 +9,7 @@ import java.util.List;
 public class ImageSorterMain {
 
     public static void main(String[] args) {
-        Path folder = Paths.get("/home/fluxyfp/Downloads/PastaImagensAps"); //Caminho da pasta com as imagens
+        Path folder = Paths.get("/home/fluxyfp/Downloads/PastaImagensAps/ISatelitales"); //Caminho da pasta com as imagens
         List<ImageData> images = new ArrayList<>();
 
         try (DirectoryStream<Path> stream = Files.newDirectoryStream(folder)) {
@@ -29,16 +29,17 @@ public class ImageSorterMain {
         List<ImageData> imagesToSort = new ArrayList<>(images);
 
         long start = System.nanoTime();
-        //BubbleSort.sort(imagesToSort);
+        BubbleSort.sort(imagesToSort);
         //MergeSort.sort(imagesToSort);
-        QuickSort.sort(imagesToSort);
+        //QuickSort.sort(imagesToSort);
         long end = System.nanoTime();
 
         System.out.println("Tempo de ordenação: " + ((end - start) / 1_000_000) + " ms");
 
-        for (ImageData img : imagesToSort) {
-            System.out.println(img.creationTime + " - " + img.path.getFileName());
-        }
+        //for (ImageData img : imagesToSort) {
+            //System.out.println(img.creationTime + " - " + img.path.getFileName()); //mostrando que esta ordenando de forma correta
+        //}
+
     }
 
     private static boolean isImage(Path path) {
