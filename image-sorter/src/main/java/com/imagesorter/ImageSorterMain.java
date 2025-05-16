@@ -9,7 +9,7 @@ import java.util.List;
 public class ImageSorterMain {
 
     public static void main(String[] args) {
-        Path folder = Paths.get("/home/fluxyfp/Downloads/PastaTeste"); // 🔁 Altere esse caminho conforme necessário
+        Path folder = Paths.get("/home/fluxyfp/Downloads/PastaImagensAps"); //Caminho da pasta com as imagens
         List<ImageData> images = new ArrayList<>();
 
         try (DirectoryStream<Path> stream = Files.newDirectoryStream(folder)) {
