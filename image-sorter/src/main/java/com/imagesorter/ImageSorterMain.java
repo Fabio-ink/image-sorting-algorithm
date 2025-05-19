@@ -29,9 +29,9 @@ public class ImageSorterMain {
         List<ImageData> imagesToSort = new ArrayList<>(images);
 
         long start = System.nanoTime();
-        BubbleSort.sort(imagesToSort);
+        //BubbleSort.sort(imagesToSort);
         //MergeSort.sort(imagesToSort);
-        //QuickSort.sort(imagesToSort);
+        QuickSort.sort(imagesToSort);
         long end = System.nanoTime();
 
         System.out.println("Tempo de ordenação: " + ((end - start) / 1_000_000) + " ms");
